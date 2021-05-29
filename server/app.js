@@ -1,8 +1,10 @@
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
-const DB = 'mongodb+srv://mern:MERN2169@cluster0.mwbxt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+dotenv.config({path:'./config.env'})
+const DB = process.env.DATABASE;
 mongoose.connect(DB).then(() =>{
   useNewUrlParser=true,
   useCreateIndex= true,
